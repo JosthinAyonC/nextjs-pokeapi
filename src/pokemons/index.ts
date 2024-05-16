@@ -1,6 +1,7 @@
 // funtional components
 export { PokemonGrid } from './components/PokemonGrid';
 export { PokemonCard } from './components/PokemonCard';
+export { PokemonDashboard } from './components/PokemonDashboard';
 
 export { Regiones } from './data/regiones';
 
