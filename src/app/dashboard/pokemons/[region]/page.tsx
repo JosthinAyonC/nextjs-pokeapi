@@ -34,6 +34,7 @@ export default async function RegionPage({ params }: Props) {
     const pokemons = await getPokemons(region.limit, region.offset);
     return (
         <div className="flex flex-col">
+            <h1 className="text-7xl font-bold text-center">{region.name}</h1>
             <PokemonGrid pokemons={pokemons} />
         </div>
     );

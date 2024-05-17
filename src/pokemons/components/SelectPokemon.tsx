@@ -16,7 +16,7 @@ export const SelectPokemon = () => {
 
     return (
         <>
-            <select onChange={onChangeSelect} className="mb-4 p-2 bg-blue-500 text-white">
+            <select onChange={onChangeSelect} className="rounded-2xl mb-4 p-2 bg-blue-500 text-white">
                 {Regiones.map((region) => (
                     <option
                         key={region.name}
