@@ -1,5 +1,6 @@
 import { PokemonGrid, PokemonResponse, Regiones, SimplePokemon } from "@/pokemons";
 import { Metadata } from "next";
+import { notFound } from "next/navigation";
 
 interface Props {
     params: {
@@ -30,7 +31,7 @@ const getPokemons = async (limit = 20, offset = 0): Promise<SimplePokemon[]> => 
 export default async function RegionPage({ params }: Props) {
     console.log("Region: ", params.region);
     const region = Regiones.find((region) => region.name === params.region);
-    if (!region) throw new Error('Region not found');
+    if (!region) notFound();
     const pokemons = await getPokemons(region.limit, region.offset);
     return (
         <div className="flex flex-col">
