@@ -1,4 +1,4 @@
-import { PokemonGrid, PokemonResponse, Regiones, SimplePokemon } from "@/pokemons";
+import { PokemonGrid, PokemonResponse, Regiones, SelectPokemon, SimplePokemon } from "@/pokemons";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 
@@ -34,9 +34,14 @@ export default async function RegionPage({ params }: Props) {
     if (!region) notFound();
     const pokemons = await getPokemons(region.limit, region.offset);
     return (
-        <div className="flex flex-col">
-            <h1 className="text-7xl font-bold text-center">{region.name}</h1>
-            <PokemonGrid pokemons={pokemons} />
-        </div>
+        <>
+            <div className="p-2 flex flex-col">
+                <SelectPokemon />
+            </div>
+            <div className="flex flex-col">
+                <h1 className="text-7xl font-bold text-center">{region.name}</h1>
+                <PokemonGrid pokemons={pokemons} />
+            </div>
+        </>
     );
 }
