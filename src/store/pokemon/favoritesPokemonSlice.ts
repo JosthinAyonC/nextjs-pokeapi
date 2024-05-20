@@ -17,10 +17,12 @@ export const favPokemonsSlice = createSlice({
     reducers: {
         addOne: (state, action: PayloadAction<SimplePokemon>) => {
             state.count += 1;
+            action.payload.isFavorite = true;
             state.pokemons.push(action.payload);
         },
         removeOne: (state, action: PayloadAction<SimplePokemon>) => {
             state.count -= 1;
+            action.payload.isFavorite = false;
             state.pokemons = state.pokemons.filter(pokemon => pokemon.id !== action.payload.id);
         }
     }
