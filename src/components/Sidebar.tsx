@@ -17,7 +17,7 @@ const menuItems = [
     subTitle: 'Contador Client Side'
   },
   {
-    path: '/dashboard/pokemons',
+    path: '/dashboard/pokemons/Kanto',
     icon: <IoFootball size={40} />,
     title: 'Pokemons',
     subTitle: 'Lista de Pokemons'
